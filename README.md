@@ -28,7 +28,7 @@
 | status_id       | integer       | null: false                     |
 | cost_id         | integer       | null: false                     |
 | region_id       | integer       | null: false                     |
-| period_id         | integer       | null: false                     |
+| period_id       | integer       | null: false                     |
 
 ### Association
 
@@ -66,4 +66,4 @@
 
 ### Association
 
-- be_longs :order
+- belongs_to :order
