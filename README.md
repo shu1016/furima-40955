@@ -10,9 +10,7 @@
 | last_name           | string   | null: false               |
 | family_name_kana    | string   | null: false               |
 | last_name_kana      | string   | null: false               |
-| birthday_year       | date     | null: false               |
-| birthday_month      | date     | null: false               |
-| birthday_day        | date     | null: false               |
+| birthday            | date     | null: false               |
 
 ### Association
 
@@ -20,44 +18,53 @@
 - has_many :orders
 
 ## itemsテーブル
-|colum        | Type          |Options                          |
-|-------------|---------------|---------------------------------|
-| name        | string        | null: false                     |
-| text        | text          | null: false                     |
-| price       | interger      | null: false                     |
-| image       | references    | null: false, foreign_key: true  |
-| category    | string        | null: false                     |
-| status      | string        | null: false                     |
+|colum            | Type          |Options                          |
+|-----------------|---------------|---------------------------------|
+| user            | references    | null: false   foreign_key: true |
+| name            | string        | null: false                     |
+| content         | text          | null: false                     |
+| price           | integer       | null: false                     |
+| category_id     | integer       | null: false                     |
+| status_id       | integer       | null: false                     |
+| cost_id         | integer       | null: false                     |
+| region_id       | integer       | null: false                     |
+| days_id         | integer       | null: false                     |
 
 ### Association
 
 - belongs_to :user
 - has_one :order
+- belongs_to_active_hash :category
+- belongs_to_active_hash :status
+- belongs_to_active_hash :cost
+- belongs_to_active_hash :region
+- belongs_to_active_hash :days
 
 
 ## ordersテーブル
 |colum        | Type        |Options                            |
 |-------------|-------------|--------------------------------   |
-| user        | reference   | null: false  foreign_key: true    |
-| item        | reference   | null: false  foreign_key: true    |
+| user        | references  | null: false  foreign_key: true    |
+| item        | references  | null: false  foreign_key: true    |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :delivery
+- has_one :delivery
 
 ## deliveriesテーブル
-|colum        | Type        |Options                            |
-|-------------|-------------|--------------------------------   |
-| order       | reference   | null: false  foreign_key: true    |
-| post_code   | string      | null: false                       |
-| prefecture  | string      | null: false                       |
-| city        | string      | null: false                       |
-| address     | string      | null: false                       |
-| building    | string      | null: false                       |
-| tel_number  | string      | null: false                       |
+|colum          | Type        |Options                            |
+|-------------  |-------------|--------------------------------   |
+| order         | references  | null: false  foreign_key: true    |
+| post_code     | string      | null: false                       |
+| prefecture_id | integer     | null: false                       |
+| city          | string      | null: false                       |
+| address       | string      | null: false                       |
+| building      | string      |                                   |
+| tel_number    | string      | null: false                       |
 
 ### Association
 
-- has_many :orders
+- be_longs :orders
+- has_one_active_hash :prefecture
