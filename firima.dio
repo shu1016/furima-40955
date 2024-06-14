@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="BlOl8bPIqjuu48SIs3QA" name="ページ1">
-        <mxGraphModel dx="677" dy="1973" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1774" dy="1973" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -31,7 +31,7 @@
                 <mxCell id="97" value="region_id (integer, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=0;labelBackgroundColor=none;labelBorderColor=none;strokeWidth=1;fontColor=#121212;" vertex="1" parent="27">
                     <mxGeometry y="236" width="280" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="days_id (integer, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=0;labelBackgroundColor=none;labelBorderColor=none;strokeWidth=1;fontColor=#121212;" vertex="1" parent="27">
+                <mxCell id="96" value="period_id (integer, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=0;labelBackgroundColor=none;labelBorderColor=none;strokeWidth=1;fontColor=#121212;" vertex="1" parent="27">
                     <mxGeometry y="266" width="280" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="93" style="edgeStyle=none;html=1;strokeColor=#050505;strokeWidth=2;fontColor=#121212;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;endSize=20;startSize=20;" edge="1" parent="1" source="42">

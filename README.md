@@ -28,7 +28,7 @@
 | status_id       | integer       | null: false                     |
 | cost_id         | integer       | null: false                     |
 | region_id       | integer       | null: false                     |
-| days_id         | integer       | null: false                     |
+| period_id         | integer       | null: false                     |
 
 ### Association
 
@@ -38,7 +38,7 @@
 - belongs_to_active_hash :status
 - belongs_to_active_hash :cost
 - belongs_to_active_hash :region
-- belongs_to_active_hash :days
+- belongs_to_active_hash :period
 
 
 ## ordersテーブル
@@ -58,7 +58,7 @@
 |-------------  |-------------|--------------------------------   |
 | order         | references  | null: false  foreign_key: true    |
 | post_code     | string      | null: false                       |
-| prefecture_id | integer     | null: false                       |
+| region_id     | integer     | null: false                       |
 | city          | string      | null: false                       |
 | address       | string      | null: false                       |
 | building      | string      |                                   |
@@ -66,5 +66,4 @@
 
 ### Association
 
-- be_longs :orders
-- has_one_active_hash :prefecture
+- be_longs :order
