@@ -13,4 +13,3 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
 end
-/\A[ぁ-んァ-ン一-龥]/
