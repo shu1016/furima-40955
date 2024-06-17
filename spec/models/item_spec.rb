@@ -11,6 +11,11 @@ RSpec.describe Item, type: :model do
       end
     end
     context '出品が出来ない' do
+      it 'user_idが空では登録できない' do
+        @item.user_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User can't be blank")
+      end
       it 'imageが空では登録できない' do
         @item.image = nil
         @item.valid?
@@ -20,11 +25,6 @@ RSpec.describe Item, type: :model do
         @item.name = ""
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
-      end
-      it 'contentが空では登録できない' do
-        @item.content = ""
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Content can't be blank")
       end
       it 'contentが空では登録できない' do
         @item.content = ""
