@@ -14,6 +14,6 @@ class OrderDelivery
   
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
-    Delivery.create(post_code: posl_code, region_id: region_id, city: city, address: address, building: building, tel_number: tel_number, order_id: order.id)
+    Delivery.create(post_code: post_code, region_id: region_id, city: city, address: address, building: building, tel_number: tel_number, order_id: order.id)
   end
 end
