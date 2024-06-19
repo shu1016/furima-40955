@@ -1,6 +1,6 @@
 class OrderDelivery
   include ActiveModel::Model
-  attr_accessor, :post_code, :region_id, :city, :address, :building, :tel_number, :user_id, :item_id
+  attr_accessor :post_code, :region_id, :city, :address, :building, :tel_number, :user_id, :item_id
 
   with_options presence: true do
     validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
