@@ -11,14 +11,15 @@ class OrdersController < ApplicationController
       @order_delivery.save
       redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      @item = Item.find(params[:item_id])
+      render :index, status: :unprocessable_entity
     end
   end
 
   private
 
   def order_params
-    params.require(:order_delivery).permit(:post_code, :region, :city, :address, :building, :tel_number).merge(user_id: current_user.id, item_id: item_id)
+    params.require(:order_delivery).permit(:post_code, :region_id, :city, :address, :building, :tel_number).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
 end
