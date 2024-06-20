@@ -1,11 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :move_to_root, only: [:index, :create]
-  before_action :set_item, only: :create
+  before_action :set_item, only: [:create, :index]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-    @item = Item.find(params[:item_id])
     @order_delivery = OrderDelivery.new
   end
 
@@ -22,7 +21,6 @@ class OrdersController < ApplicationController
       @order_delivery.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
       render :index, status: :unprocessable_entity
     end
@@ -44,6 +42,6 @@ class OrdersController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(order_params[:item_id])
+    @item = Item.find(params[:item_id])
   end
 end
