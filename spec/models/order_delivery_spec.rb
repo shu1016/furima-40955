@@ -59,6 +59,11 @@ RSpec.describe OrderDelivery, type: :model do
         @order_delivery.valid?
         expect(@order_delivery.errors.full_messages).to include("Tel number is invalid")
       end
+      it 'tel_numberに半角数字以外がはいっていては購入できない' do
+        @order_delivery.tel_number = "1234567*+-"
+        @order_delivery.valid?
+        expect(@order_delivery.errors.full_messages).to include("Tel number is invalid")
+      end
       it 'userが紐付いていないと保存できないこと' do
         @order_delivery.user_id = nil
         @order_delivery.valid?

@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :move_to_root, only: [:index, :create]
+  before_action :set_item, only: :create
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -10,7 +11,6 @@ class OrdersController < ApplicationController
 
   def create
     @order_delivery = OrderDelivery.new(order_params)
-    @item = Item.find(order_params[:item_id])
     @price = @item.price
     if @order_delivery.valid?
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
@@ -43,4 +43,7 @@ class OrdersController < ApplicationController
     end
   end
 
+  def set_item
+    @item = Item.find(order_params[:item_id])
+  end
 end
