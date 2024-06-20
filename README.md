@@ -54,15 +54,15 @@
 - has_one :delivery
 
 ## deliveriesテーブル
-|colum          | Type        |Options                            |
-|-------------  |-------------|--------------------------------   |
-| order         | references  | null: false  foreign_key: true    |
-| post_code     | string      | null: false                       |
-| region_id     | integer     | null: false                       |
-| city          | string      | null: false                       |
-| address       | string      | null: false                       |
-| building      | string      |                                   |
-| tel_number    | string      | null: false                       |
+|colum          | Type        |ptions                            |
+|-------------  |-------------|-------------------------------   |
+| order         | references  | null: false  foreign_key: rue    |
+| post_code     | string      | null: false                      |
+| region_id     | integer     | null: false                      |
+| city          | string      | null: false                      |
+| address       | string      | null: false                      |
+| building      | string      |                                  |
+| tel_number    | string      | null: false                      |
 
 ### Association
 
